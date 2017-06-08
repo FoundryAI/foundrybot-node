@@ -6,4 +6,4 @@
 
 ## Documentation
 
-[View docs](foundrybot.readme.io/v1.0/reference)
+[View docs](https://foundrybot.readme.io/v1.0/reference)

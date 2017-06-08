@@ -1,0 +1,24 @@
+{
+  "name": "foundrybot",
+  "version": "1.0.0",
+  "description": "Foundrybot API wrapper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FoundryAI/foundrybot-node.git"
+  },
+  "keywords": [
+    "foundryai",
+    "foundrybot",
+    "foundrybot-crawler"
+  ],
+  "author": "FoundryAI <info@foundry.ai>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FoundryAI/foundrybot-node/issues"
+  },
+  "homepage": "https://github.com/FoundryAI/foundrybot-node#readme"
+}

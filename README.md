@@ -1,6 +1,7 @@
 # Foundrybot Node.js Client 
 
 [![Version](https://img.shields.io/npm/v/foundrybot.svg)](https://www.npmjs.org/package/foundrybot)
+[![Build Status](https://travis-ci.org/FoundryAI/foundrybot-node.svg?branch=master)](https://travis-ci.org/FoundryAI/foundrybot-node)
 [![Downloads](https://img.shields.io/npm/dm/foundrybot.svg)](https://www.npmjs.com/package/foundrybot)
 [![Try on RunKit](https://badge.runkitcdn.com/foundrybot.svg)](https://runkit.com/npm/foundrybot)
 

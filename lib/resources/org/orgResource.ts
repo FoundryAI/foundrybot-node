@@ -37,6 +37,7 @@ export class OrgResource extends Resource {
       params: { id },
       url: '/orgs/{id}'
     })
+    .then((result) => result.doc)
   }
 
   /**
@@ -49,6 +50,7 @@ export class OrgResource extends Resource {
       data: { doc: _.pick(params, ['name']) },
       url: `/orgs/{id}`
     })
+    .then((result) => result.doc)
   }
 
 }

@@ -46,7 +46,7 @@ describe('WebhookSettingResource', () => {
         method: 'POST',
         data: { type: 'org.updated', urlEndpoint: 'http://example.com/webhooks' },
         url: '/webhook-settings/subscribe'
-      }).resolves(true);
+      }).resolves({ doc: true });
       stub.throws('Invalid args');
       return resource.subscribe({ type: 'org.updated', urlEndpoint: 'http://example.com/webhooks' })
       .then((result) => {
@@ -62,7 +62,7 @@ describe('WebhookSettingResource', () => {
       method: 'POST',
       data: { type: 'org.updated' },
       url: '/webhook-settings/unsubscribe'
-    }).resolves(true);
+    }).resolves({ doc: true });
     stub.throws('Invalid args');
 
     return resource.unsubscribe({ type: 'org.updated' })

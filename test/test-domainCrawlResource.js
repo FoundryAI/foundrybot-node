@@ -47,7 +47,7 @@ describe('DomainCrawlResource', () => {
         method: 'GET',
         params: { id: 1 },
         url: '/domain-crawls/{id}'
-      }).resolves(true);
+      }).resolves({ doc: true });
       stub.throws('Invalid args');
       return resource.get(1)
       .then((result) => {
@@ -79,7 +79,7 @@ describe('DomainCrawlResource', () => {
       method: 'POST',
       data: { url: 'http://example.com' },
       url: '/domain-crawls'
-    }).resolves(true);
+    }).resolves({ doc: true });
     stub.throws('Invalid args');
 
     return resource.create({ url: 'http://example.com' })

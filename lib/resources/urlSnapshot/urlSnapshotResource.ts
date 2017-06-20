@@ -38,6 +38,7 @@ export class UrlSnapshotResource extends Resource {
       params: { id },
       url: '/url-snapshots/{id}'
     })
+    .then((result) => result.doc)
   }
 
   /**

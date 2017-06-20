@@ -38,6 +38,7 @@ export class EventResource extends Resource {
       params: { id },
       url: '/events/{id}'
     })
+    .then((result) => result.doc)
   }
 
   /**

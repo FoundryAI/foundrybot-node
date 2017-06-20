@@ -12,14 +12,16 @@ class OrgResource extends resource_1.Resource {
             method: 'GET',
             params: { id },
             url: '/orgs/{id}'
-        });
+        })
+            .then((result) => result.doc);
     }
     update(params) {
         return this.makeRequest({
             method: 'PUT',
             data: { doc: _.pick(params, ['name']) },
             url: `/orgs/{id}`
-        });
+        })
+            .then((result) => result.doc);
     }
 }
 exports.OrgResource = OrgResource;

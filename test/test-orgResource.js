@@ -46,7 +46,7 @@ describe('OrgResource', () => {
         method: 'GET',
         params: { id: 1 },
         url: '/orgs/{id}'
-      }).resolves(true);
+      }).resolves({ doc: true });
       stub.throws('Invalid args');
       return resource.get(1)
       .then((result) => {
@@ -62,7 +62,7 @@ describe('OrgResource', () => {
       method: 'PUT',
       data: { doc: { name: 'New Name' } },
       url: '/orgs/{id}'
-    }).resolves(true);
+    }).resolves({ doc: true });
     stub.throws('Invalid args');
 
     return resource.update({ id: 1, name: 'New Name' })

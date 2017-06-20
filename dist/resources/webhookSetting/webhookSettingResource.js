@@ -12,14 +12,16 @@ class WebhookSettingResource extends resource_1.Resource {
             method: 'POST',
             data: _.pick(params, ['type', 'urlEndpoint']),
             url: '/webhook-settings/subscribe'
-        });
+        })
+            .then((result) => result.doc);
     }
     unsubscribe(params) {
         return this.makeRequest({
             method: 'POST',
             data: _.pick(params, ['type']),
             url: '/webhook-settings/unsubscribe'
-        });
+        })
+            .then((result) => result.doc);
     }
 }
 exports.WebhookSettingResource = WebhookSettingResource;

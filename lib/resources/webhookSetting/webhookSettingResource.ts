@@ -43,6 +43,7 @@ export class WebhookSettingResource extends Resource {
       data: _.pick(params, ['type', 'urlEndpoint']),
       url: '/webhook-settings/subscribe'
     })
+    .then((result) => result.doc)
   }
 
   /**
@@ -55,6 +56,7 @@ export class WebhookSettingResource extends Resource {
       data: _.pick(params, ['type']),
       url: '/webhook-settings/unsubscribe'
     })
+    .then((result) => result.doc)
   }
 
 }

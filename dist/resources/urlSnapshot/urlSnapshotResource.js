@@ -12,7 +12,8 @@ class UrlSnapshotResource extends resource_1.Resource {
             method: 'GET',
             params: { id },
             url: '/url-snapshots/{id}'
-        });
+        })
+            .then((result) => result.doc);
     }
     search(params) {
         return this.makeRequest({

@@ -12,7 +12,8 @@ class EventResource extends resource_1.Resource {
             method: 'GET',
             params: { id },
             url: '/events/{id}'
-        });
+        })
+            .then((result) => result.doc);
     }
     search(params) {
         return this.makeRequest({

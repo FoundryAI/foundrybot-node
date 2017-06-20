@@ -12,7 +12,8 @@ class DomainCrawlResource extends resource_1.Resource {
             method: 'GET',
             params: { id },
             url: '/domain-crawls/{id}'
-        });
+        })
+            .then((result) => result.doc);
     }
     search(params) {
         return this.makeRequest({
@@ -26,7 +27,8 @@ class DomainCrawlResource extends resource_1.Resource {
             method: 'POST',
             data: _.pick(params, ['url', 'maxUrls']),
             url: '/domain-crawls'
-        });
+        })
+            .then((result) => result.doc);
     }
 }
 exports.DomainCrawlResource = DomainCrawlResource;

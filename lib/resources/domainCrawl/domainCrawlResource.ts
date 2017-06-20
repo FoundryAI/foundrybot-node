@@ -48,6 +48,7 @@ export class DomainCrawlResource extends Resource {
       params: { id },
       url: '/domain-crawls/{id}'
     })
+    .then((result) => result.doc)
   }
 
   /**
@@ -72,6 +73,7 @@ export class DomainCrawlResource extends Resource {
       data: _.pick(params, ['url', 'maxUrls']),
       url: '/domain-crawls'
     })
+    .then((result) => result.doc)
   }
 
 }

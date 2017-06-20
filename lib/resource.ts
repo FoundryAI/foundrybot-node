@@ -44,6 +44,10 @@ export abstract class Resource {
 
   }
 
+  /**
+   * @param requestConfig
+   * @returns {Promise<>}
+   */
   public makeRequest(requestConfig: FoundrybotRequestAttributes) {
     return Request({
       baseUrl: 'https://api.foundrybot.com/v1',

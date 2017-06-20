@@ -46,7 +46,7 @@ describe('UrlSnapshotResource', () => {
         method: 'GET',
         params: { id: 1 },
         url: '/url-snapshots/{id}'
-      }).resolves(true);
+      }).resolves({ doc: true });
       stub.throws('Invalid args');
       return resource.get(1)
       .then((result) => {

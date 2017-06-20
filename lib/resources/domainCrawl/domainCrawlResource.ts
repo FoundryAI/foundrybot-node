@@ -11,6 +11,7 @@ export interface FoundrybotDomainCrawl {
   domainHostname: string;
   urlHref: string;
   maxUrls: number;
+  maxAge: number;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -22,6 +23,7 @@ export interface FoundrybotDomainCrawlSearchAttributes extends FoundrybotSearchA
 export interface FoundrybotDomainCrawlCreateAttributes extends FoundrybotCreateAttributes {
   url?: string;
   maxUrls?: number;
+  maxAge?: number;
 }
 
 /**
@@ -70,7 +72,7 @@ export class DomainCrawlResource extends Resource {
   create (params: FoundrybotDomainCrawlCreateAttributes) {
     return this.makeRequest({
       method: 'POST',
-      data: _.pick(params, ['url', 'maxUrls']),
+      data: _.pick(params, ['url', 'maxUrls', 'maxAge']),
       url: '/domain-crawls'
     })
     .then((result) => result.doc)

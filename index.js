@@ -1,1 +1,1 @@
-module.exports = require('./dist/foundrybotClient');
+module.exports = require('./dist/foundrybotClient').FoundrybotClient.create;

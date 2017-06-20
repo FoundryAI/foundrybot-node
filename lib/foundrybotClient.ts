@@ -22,6 +22,10 @@ export class FoundrybotClient {
   public webhookSetting: WebhookSettingResource;
   private secretKey: String;
 
+  static create (secretKey: string) {
+    return new FoundrybotClient(secretKey);
+  }
+
   constructor(secretKey: string) {
 
     this.secretKey = secretKey;

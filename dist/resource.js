@@ -22,7 +22,7 @@ class Resource {
             json: true
         })
             .catch(err => {
-            throw new error_1.FoundrybotError(err.error);
+            throw new error_1.FoundrybotError(err.message, err.type);
         });
     }
     buildHeaders() {

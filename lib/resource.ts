@@ -60,7 +60,7 @@ export abstract class Resource {
       json: true
     })
     .catch(err => {
-      throw new FoundrybotError(err.error);
+      throw new FoundrybotError(err.message, err.type);
     })
   }
 

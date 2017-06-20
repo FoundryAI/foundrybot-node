@@ -11,6 +11,9 @@ const urlSnapshotMediaResource_1 = require("./resources/urlSnapshotMedia/urlSnap
 const urlSnapshotTagResource_1 = require("./resources/urlSnapshotTag/urlSnapshotTagResource");
 const webhookSettingResource_1 = require("./resources/webhookSetting/webhookSettingResource");
 class FoundrybotClient {
+    static create(secretKey) {
+        return new FoundrybotClient(secretKey);
+    }
     constructor(secretKey) {
         this.secretKey = secretKey;
         if (!this.secretKey) {

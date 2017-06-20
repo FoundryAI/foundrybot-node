@@ -1,20 +1,22 @@
-import { FoundrybotError } from 'foundrybotError';
+import { FoundrybotError } from 'error';
+import { DomainCrawlResource } from './resources/domainCrawl/domainCrawlResource';
 
 export class FoundrybotClient {
 
   public domainCrawl: DomainCrawlResource;
   private secretKey: String;
 
-  /**
-   * @constructor
-   * @class FoundrybotClient
-   * @param secret {string}
-   */
-  constructor (secret: string) {
-    if (!secret) throw new FoundrybotError({
-      message: 'Missing required parameter "secretKey".',
-      type: 'authentication_error'
-    });
+  constructor(secretKey: string) {
+
+    this.secretKey = secretKey;
+
+    if (!this.secretKey) {
+      throw new FoundrybotError('Missing required parameter "secretKey".', 'authentication_error');
+    }
+
+    this.domainCrawl = new DomainCrawlResource(secretKey);
+
   }
+
 
 }

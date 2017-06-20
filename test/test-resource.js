@@ -1,5 +1,6 @@
-const testKey = process.env.TEST_API_KEY;
+const testUtil = require('./helpers/util');
 const expect = require('chai').expect;
+const sinon = require('sinon');
 const Resource = require('../dist/resource').Resource;
 
 describe('Resource', () => {
@@ -25,7 +26,7 @@ describe('Resource', () => {
     });
 
     it('should instantiate', () => {
-      const resource = new Resource(testKey);
+      const resource = new Resource(testUtil.getTestKey());
       expect(resource).to.exist;
       expect(resource.makeRequest).to.be.a('function');
       expect(resource.buildHeaders).to.be.a('function');
@@ -33,9 +34,4 @@ describe('Resource', () => {
     })
 
   });
-
-  describe('makeRequest', () => {
-
-  });
-
 });

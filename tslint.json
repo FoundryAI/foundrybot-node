@@ -1,4 +1,7 @@
 {
+  "env": [
+    "mocha"
+  ],
   "rules": {
     "class-name": true,
     "curly": true,

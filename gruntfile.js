@@ -2,22 +2,10 @@ module.exports = function(grunt) {
   "use strict";
 
   grunt.initConfig({
-    copy: {
-      build: {
-        files: [
-          {
-            expand: true,
-            cwd: "./lib",
-            src: ["**"],
-            dest: "./dist"
-          }
-        ]
-      }
-    },
     ts: {
       app: {
         files: [{
-          src: ["src/\*\*/\*.ts", "!src/.baseDir.ts"],
+          src: ["lib/\*\*/\*.ts", "!lib/.baseDir.ts"],
           dest: "./dist"
         }],
         options: {
@@ -41,7 +29,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-ts");
 
   grunt.registerTask("default", [
-    "copy",
     "ts"
   ]);
 

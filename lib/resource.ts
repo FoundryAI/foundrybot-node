@@ -1,9 +1,7 @@
 import * as Request from 'request-promise';
 import * as _ from 'lodash'
 
-import * as packageJson from '../package.json';
-
-import { FoundrybotError } from 'error';
+import { FoundrybotError } from './error';
 
 
 export interface FoundrybotGetAttributes {
@@ -37,24 +35,8 @@ export interface FoundrybotRequestAttributes {
 
 export abstract class Resource {
 
-  private resourceName: string;
-  private secretKey: string;
-
-  get resourceName(): string {
-    return this.resourceName;
-  }
-
-  get secretKey(): string {
-    return this.secretKey;
-  }
-
-  set resourceName(name: string) {
-    this.resourceName = name;
-  }
-
-  set secretKey(key: string) {
-    this.secretKey = key;
-  }
+  protected resourceName: string;
+  protected secretKey: string;
 
   constructor(secretKey: string) {
 
@@ -66,16 +48,6 @@ export abstract class Resource {
 
   }
 
-  public abstract get?(params: FoundrybotGetAttributes): void;
-
-  public abstract search?(params: FoundrybotSearchAttributes): void;
-
-  public abstract create?(params: FoundrybotCreateAttributes): void;
-
-  public abstract update?(params: FoundrybotUpdateAttributes): void;
-
-  public abstract delete?(params: FoundrybotDeleteAttributes): void;
-
   public makeRequest(requestConfig: FoundrybotRequestAttributes) {
     return Request({
       baseUrl: 'https://api.foundrybot.com/v1',
@@ -83,7 +55,7 @@ export abstract class Resource {
       headers: this.buildHeaders(),
       method: requestConfig.method,
       qs: requestConfig.query || {},
-      timeout: require('http').createServer().timeout,
+      timeout: 60000,
       uri: this.buildUrl(requestConfig),
       json: true
     })
@@ -95,7 +67,7 @@ export abstract class Resource {
   private buildHeaders() {
     return {
       'Authorization': `Basic ${this.secretKey}:`,
-      "User-Agent": `Foundrybot node v${packageJson.version} +(${packageJson.homepage})`
+      "User-Agent": `Foundrybot node v1.0.0 +(https://github.com/FoundryAI/foundrybot-node#readme)`
     }
   }
 

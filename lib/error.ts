@@ -1,7 +1,7 @@
 export class FoundrybotError extends Error {
 
-  public name: String;
-  public type: String;
+  public name: string;
+  public type: string;
 
   constructor (message: string, type: string = 'validation_error') {
     // Calling parent constructor of base Error class.

@@ -1,4 +1,4 @@
-import { FoundrybotError } from 'error';
+import { FoundrybotError } from './error';
 import { DomainCrawlResource } from './resources/domainCrawl/domainCrawlResource';
 import { EventResource } from './resources/event/eventResource';
 import { OrgResource } from './resources/org/orgResource';

@@ -25,7 +25,7 @@ class DomainCrawlResource extends resource_1.Resource {
     create(params) {
         return this.makeRequest({
             method: 'POST',
-            data: _.pick(params, ['url', 'maxUrls']),
+            data: _.pick(params, ['url', 'maxUrls', 'maxAge']),
             url: '/domain-crawls'
         })
             .then((result) => result.doc);

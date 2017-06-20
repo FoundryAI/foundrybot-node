@@ -32,6 +32,9 @@ describe('Resource', () => {
       expect(resource.buildUrl).to.be.a('function');
     })
 
+  });
+
+  describe('makeRequest', () => {
 
   });
 

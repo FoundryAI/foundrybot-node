@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const Request = require("request-promise");
 const _ = require("lodash");
-const packageJson = require("./../package.json");
 const error_1 = require("./error");
 class Resource {
     constructor(secretKey) {
@@ -29,7 +28,7 @@ class Resource {
     buildHeaders() {
         return {
             'Authorization': `Basic ${this.secretKey}:`,
-            "User-Agent": `Foundrybot node v${packageJson.version} +(${packageJson.homepage})`
+            "User-Agent": `Foundrybot node v1.0.0 +(https://github.com/FoundryAI/foundrybot-node#readme)`
         };
     }
     buildUrl(requestConfig) {

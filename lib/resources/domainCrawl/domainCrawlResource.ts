@@ -1,7 +1,7 @@
 import * as Promise from 'bluebird';
 import * as _ from 'lodash';
 import {
-  FoundrybotCreateAttributes, FoundrybotGetAttributes, FoundrybotSearchAttributes,
+  FoundrybotCreateAttributes, FoundrybotSearchAttributes,
   Resource
 } from '../../resource';
 
@@ -39,13 +39,13 @@ export class DomainCrawlResource extends Resource {
   }
 
   /**
-   * @param params {FoundrybotGetAttributes}
+   * @param id {string}
    * @returns {Promise<FoundrybotDomainCrawl>}
    */
-  get (params: FoundrybotGetAttributes) {
+  get (id: string) {
     return this.makeRequest({
       method: 'GET',
-      params: _.pick(params, ['id']),
+      params: { id },
       url: '/domain-crawls/{id}'
     })
   }

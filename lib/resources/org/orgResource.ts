@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 import {
-  FoundrybotGetAttributes, FoundrybotUpdateAttributes,
+  FoundrybotUpdateAttributes,
   Resource
 } from "../../resource";
 
@@ -28,13 +28,13 @@ export class OrgResource extends Resource {
   }
 
   /**
-   * @param params {FoundrybotGetAttributes}
+   * @param id {string}
    * @returns {Promise<FoundrybotOrg>}
    */
-  get (params: FoundrybotGetAttributes) {
+  get (id: string) {
     return this.makeRequest({
       method: 'GET',
-      params: _.pick(params, ['id']),
+      params: { id },
       url: '/orgs/{id}'
     })
   }

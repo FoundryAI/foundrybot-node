@@ -4,10 +4,6 @@ import * as _ from 'lodash'
 import { FoundrybotError } from './error';
 
 
-export interface FoundrybotGetAttributes {
-  id: number | string;
-}
-
 export interface FoundrybotSearchAttributes {
   limit: number;
   offset: number;
@@ -65,8 +61,9 @@ export abstract class Resource {
   }
 
   private buildHeaders() {
+    const encoded = new Buffer(`${this.secretKey}:`).toString('base64');
     return {
-      'Authorization': `Basic ${this.secretKey}:`,
+      'Authorization': `Basic ${encoded}`,
       "User-Agent": `Foundrybot node v1.0.0 +(https://github.com/FoundryAI/foundrybot-node#readme)`
     }
   }

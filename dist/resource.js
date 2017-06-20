@@ -26,8 +26,9 @@ class Resource {
         });
     }
     buildHeaders() {
+        const encoded = new Buffer(`${this.secretKey}:`).toString('base64');
         return {
-            'Authorization': `Basic ${this.secretKey}:`,
+            'Authorization': `Basic ${encoded}`,
             "User-Agent": `Foundrybot node v1.0.0 +(https://github.com/FoundryAI/foundrybot-node#readme)`
         };
     }

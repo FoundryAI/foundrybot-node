@@ -7,10 +7,10 @@ class OrgResource extends resource_1.Resource {
         super(secretKey);
         this.resourceName = 'Org';
     }
-    get(params) {
+    get(id) {
         return this.makeRequest({
             method: 'GET',
-            params: _.pick(params, ['id']),
+            params: { id },
             url: '/orgs/{id}'
         });
     }

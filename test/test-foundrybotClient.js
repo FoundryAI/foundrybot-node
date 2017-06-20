@@ -1,6 +1,6 @@
 const expect = require('chai').expect;
-
 const FoundrybotClient = require('../dist/foundrybotClient').FoundrybotClient;
+const testUtil = require('./helpers/util');
 
 describe('FoundrybotClient', () => {
 
@@ -29,8 +29,7 @@ describe('FoundrybotClient', () => {
     });
 
     it('should create', () => {
-      const testKey = '443d3f68-88a9-4a3a-adff-d1f0efbc01dc';
-      const foundrybot = FoundrybotClient.create(testKey);
+      const foundrybot = FoundrybotClient.create(testUtil.getTestKey());
       expect(foundrybot).to.exist;
       expect(foundrybot.domainCrawl).to.be.an('object');
       expect(foundrybot.event).to.be.an('object');
@@ -59,8 +58,7 @@ describe('FoundrybotClient', () => {
     });
 
     it('should instantiate', () => {
-      const testKey = '443d3f68-88a9-4a3a-adff-d1f0efbc01dc';
-      const foundrybot = new FoundrybotClient(testKey);
+      const foundrybot = new FoundrybotClient(testUtil.getTestKey());
       expect(foundrybot).to.exist;
       expect(foundrybot.domainCrawl).to.be.an('object');
       expect(foundrybot.event).to.be.an('object');

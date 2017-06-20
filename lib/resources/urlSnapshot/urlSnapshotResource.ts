@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 import {
-  FoundrybotGetAttributes, FoundrybotSearchAttributes,
+  FoundrybotSearchAttributes,
   Resource
 } from '../../resource';
 
@@ -29,13 +29,13 @@ export class UrlSnapshotResource extends Resource {
   }
 
   /**
-   * @param params {FoundrybotGetAttributes}
+   * @param id {string}
    * @returns {Promise<FoundrybotUrlSnapshot>}
    */
-  get (params: FoundrybotGetAttributes) {
+  get (id: string) {
     return this.makeRequest({
       method: 'GET',
-      params: _.pick(params, ['id']),
+      params: { id },
       url: '/url-snapshots/{id}'
     })
   }

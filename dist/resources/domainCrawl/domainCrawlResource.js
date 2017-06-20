@@ -7,10 +7,10 @@ class DomainCrawlResource extends resource_1.Resource {
         super(secretKey);
         this.resourceName = 'DomainCrawl';
     }
-    get(params) {
+    get(id) {
         return this.makeRequest({
             method: 'GET',
-            params: _.pick(params, ['id']),
+            params: { id },
             url: '/domain-crawls/{id}'
         });
     }

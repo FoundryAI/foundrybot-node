@@ -7,10 +7,10 @@ class UrlSnapshotResource extends resource_1.Resource {
         super(secretKey);
         this.resourceName = 'UrlSnapshot';
     }
-    get(params) {
+    get(id) {
         return this.makeRequest({
             method: 'GET',
-            params: _.pick(params, ['id']),
+            params: { id },
             url: '/url-snapshots/{id}'
         });
     }

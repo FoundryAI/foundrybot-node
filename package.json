@@ -4,7 +4,9 @@
   "description": "Foundrybot API wrapper",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "grunt": "grunt",
+    "mocha": "mocha",
+    "test": "npm run grunt && mocha"
   },
   "repository": {
     "type": "git",
@@ -13,7 +15,8 @@
   "keywords": [
     "foundryai",
     "foundrybot",
-    "foundrybot-crawler"
+    "foundrybot-crawler",
+    "web crawler"
   ],
   "author": "FoundryAI <info@foundry.ai>",
   "license": "MIT",

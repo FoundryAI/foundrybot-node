@@ -6,6 +6,7 @@ import { UrlSnapshotResource } from './resources/urlSnapshot/urlSnapshotResource
 import { UrlSnapshotContentResource } from './resources/urlSnapshotContent/urlSnapshotContentResource';
 import { UrlSnapshotLinkResource } from './resources/urlSnapshotLink/urlSnapshotLinkResource';
 import { UrlSnapshotMediaResource } from './resources/urlSnapshotMedia/urlSnapshotMediaResource';
+import { UrlSnapshotMetadataResource } from './resources/urlSnapshotMetadata/urlSnapshotMetadataResource';
 import { UrlSnapshotTagResource } from './resources/urlSnapshotTag/urlSnapshotTagResource';
 import { WebhookSettingResource } from './resources/webhookSetting/webhookSettingResource';
 
@@ -18,6 +19,7 @@ export class FoundrybotClient {
   public urlSnapshotContent: UrlSnapshotContentResource;
   public urlSnapshotLink: UrlSnapshotLinkResource;
   public urlSnapshotMedia: UrlSnapshotMediaResource;
+  public urlSnapshotMetadataResource: UrlSnapshotMetadataResource;
   public urlSnapshotTag: UrlSnapshotTagResource;
   public webhookSetting: WebhookSettingResource;
   private secretKey: String;
@@ -41,6 +43,7 @@ export class FoundrybotClient {
     this.urlSnapshotContent = new UrlSnapshotContentResource(secretKey);
     this.urlSnapshotLink = new UrlSnapshotLinkResource(secretKey);
     this.urlSnapshotMedia = new UrlSnapshotMediaResource(secretKey);
+    this.urlSnapshotMetadataResource = new UrlSnapshotMetadataResource(secretKey);
     this.urlSnapshotTag = new UrlSnapshotTagResource(secretKey);
     this.webhookSetting = new WebhookSettingResource(secretKey);
 

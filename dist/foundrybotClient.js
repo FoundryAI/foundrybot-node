@@ -8,6 +8,7 @@ const urlSnapshotResource_1 = require("./resources/urlSnapshot/urlSnapshotResour
 const urlSnapshotContentResource_1 = require("./resources/urlSnapshotContent/urlSnapshotContentResource");
 const urlSnapshotLinkResource_1 = require("./resources/urlSnapshotLink/urlSnapshotLinkResource");
 const urlSnapshotMediaResource_1 = require("./resources/urlSnapshotMedia/urlSnapshotMediaResource");
+const urlSnapshotMetadataResource_1 = require("./resources/urlSnapshotMetadata/urlSnapshotMetadataResource");
 const urlSnapshotTagResource_1 = require("./resources/urlSnapshotTag/urlSnapshotTagResource");
 const webhookSettingResource_1 = require("./resources/webhookSetting/webhookSettingResource");
 class FoundrybotClient {
@@ -26,6 +27,7 @@ class FoundrybotClient {
         this.urlSnapshotContent = new urlSnapshotContentResource_1.UrlSnapshotContentResource(secretKey);
         this.urlSnapshotLink = new urlSnapshotLinkResource_1.UrlSnapshotLinkResource(secretKey);
         this.urlSnapshotMedia = new urlSnapshotMediaResource_1.UrlSnapshotMediaResource(secretKey);
+        this.urlSnapshotMetadataResource = new urlSnapshotMetadataResource_1.UrlSnapshotMetadataResource(secretKey);
         this.urlSnapshotTag = new urlSnapshotTagResource_1.UrlSnapshotTagResource(secretKey);
         this.webhookSetting = new webhookSettingResource_1.WebhookSettingResource(secretKey);
     }
